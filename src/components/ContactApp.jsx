@@ -1,12 +1,14 @@
 import { useState } from "react"
 import { useContactList } from "../hooks/useContactList"
+import ContactList from "./ContactList";
 
 import form_bg from '../assets/images/form-bg.jpg'
 
 const ContactApp = () => {
     const { name, setName,
         email, setEmail,
-        phone, setPhone 
+        phone, setPhone,
+        searchUser, setSearchUser, 
     } = useContactList();
 
     return (
@@ -28,6 +30,14 @@ const ContactApp = () => {
                 </form>
             </div>
             <div className="main-container">
+                <input 
+                    type="text" 
+                    value={searchUser} 
+                    onChange={(e)=> setSearchUser(e.target.value)}
+                    placeholder="Search list..." 
+                    className="search-box" 
+                />
+                <ContactList />
             </div>
         </div>
     )

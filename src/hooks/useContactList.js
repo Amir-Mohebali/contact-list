@@ -4,6 +4,7 @@ export const useContactList = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
+  const [searchUser, setSearchUser] = useState('');
 
   return {
     name,
@@ -12,5 +13,7 @@ export const useContactList = () => {
     setEmail,
     phone,
     setPhone,
+    searchUser,
+    setSearchUser,
   }
 }

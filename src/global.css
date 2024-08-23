@@ -85,4 +85,100 @@ button {
     height: 100vh;
     padding: 30px;
     background: #ccc;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.search-box {
+    width: 100%;
+    padding: 12px 8px;
+    font-size: 18px;
+    outline: none;
+    border: none;
+    border-radius: 4px;   
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow-y: scroll;
+    padding-right: 10px;
+    height: 100vh;
+}
+
+/* Firefox */
+.list {
+    scrollbar-width: auto;
+    scrollbar-color: #b968c8 #f1f1f1;
+}
+
+/* Chrome, Edge, Safari */
+.list::-webkit-scrollbar {
+    width: 20px;
+}
+
+.list::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.list::-webkit-scrollbar-thumb {
+    background:#b968c8;
+}
+
+.list .item {
+    width: 100%;
+    background-color: rgba(223, 64, 255, 0.6);
+    color: #fff;
+    padding: 16px;
+    font-family: "Inter", sans-serif;
+    font-size: 18px;
+    border-radius: 4px;
+    display: flex;
+    align-items: flex-end;
+    gap: 15px;
+}
+
+.list .item-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex: 1;
+}
+
+.list .item-icon {
+    display: flex;
+}
+
+.list .item-info {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1;
+}
+
+.list .item-info h4 {
+    font-size: 22px;
+    color: #fffe03;
+    border-bottom: 3px solid #fffa03;
+}
+
+.list .item-info span {
+    font-size: 14px;
+}
+
+.list .item-info div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.item-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.item-buttons i {
+    color: #fffe03;
 }
