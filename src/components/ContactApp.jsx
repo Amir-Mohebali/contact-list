@@ -1,14 +1,17 @@
 import { useState } from "react"
 import { useContactList } from "../hooks/useContactList"
 import ContactList from "./ContactList";
+import { Toaster } from 'react-hot-toast';
 
 import form_bg from '../assets/images/form-bg.jpg'
 
 const ContactApp = () => {
-    const { name, setName,
+    const { contacts,
+        name, setName,
         email, setEmail,
         phone, setPhone,
         searchUser, setSearchUser, 
+        addContact,
     } = useContactList();
 
     return (
@@ -16,7 +19,7 @@ const ContactApp = () => {
             <div className="form-container">
                 <img src={form_bg} alt="form-bg" />
                 <h1>Add Contact</h1>
-                <form className="add-form">
+                <form onSubmit={addContact} className="add-form">
                   <div className="input-control">
                     <input type="text" id="Name_Input" value={name} onChange={(e)=> setName(e.target.value)} placeholder="Name" />
                   </div>
@@ -37,8 +40,9 @@ const ContactApp = () => {
                     placeholder="Search list..." 
                     className="search-box" 
                 />
-                <ContactList />
+                <ContactList contacts={contacts}/>
             </div>
+            <Toaster />
         </div>
     )
 }
