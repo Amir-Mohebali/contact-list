@@ -1,10 +1,11 @@
 import { useState } from "react";
+import ContactApp from "./components/ContactApp";
 
 function App() {
   
   return (
     <div>
-      MIAD  
+      <ContactApp />  
     </div>
   )
 }

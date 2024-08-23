@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+}
+
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    position: relative;
+}
+
+.form-container {
+    flex: 4;
+    height: 100vh;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+    background: linear-gradient(45deg, #e0e0e0, #ad1257);
+    background: linear-gradient(#ad1257, #E0E0E0);
+    background: linear-gradient(#d203f9, #ce92d7);
+}
+
+.form-container img {
+    width: 100%;
+}
+
+.form-container h1 {
+    color: #fff;
+    font-style: italic;
+}
+
+.add-form {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.input-control {
+    margin-bottom: 10px;
+}
+
+input {
+    width: 100%;
+    padding: 10px 8px;
+    font-size: 18px;
+    outline: none;
+    border: 2px solid transparent;
+    border-radius: 4px;
+}
+
+button {
+    border: none;
+    outline: none;
+    background: none;
+    cursor: pointer;
+}
+
+.submit {
+    /* display: block; */
+    font-size: 16px;
+    width: 100%;
+    padding: 12px 8px;
+    color: #fff;
+    border-radius: 4px;
+    background-color: #800f60;
+}
+
+.submit:hover {
+    background-color: #700d54;
+}
+
+.main-container {
+    flex: 8;
+    height: 100vh;
+    padding: 30px;
+    background: #ccc;
+}
