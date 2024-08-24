@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { v4 as uuid } from 'uuid';
 import toast from 'react-hot-toast';
+import { useLocalStorage } from './useLocalStorage';
 
 export const useContactList = () => {
-  const [contacts, setContacts] = useState([]);
+  const [defaultList, { set }] = useLocalStorage('contacts');
+  const [contacts, setContacts] = useState(defaultList || []);
 
   const [editContact, setEditContact] = useState(null);
   const [showModal, setShowModal] = useState(false);
@@ -61,6 +63,7 @@ export const useContactList = () => {
           }
         ];
         setContacts(newContacts);
+        set('contacts', newContacts);
       } catch (e) {
         toast.error("An error occurred! Please try again", { duration: 4000 })
       } finally {
@@ -74,11 +77,13 @@ export const useContactList = () => {
   const deleteContact = (id) => {
     const newContacts = contacts.filter(contact => contact.id !== id);
     setContacts(newContacts);
+    set('contacts', newContacts)
   };
 
   const updateContact = (updatedContact) => {
     const newContacts = contacts.map(contact => (contact.id === updatedContact.id ? updatedContact : contact));
     setContacts(newContacts);
+    set('contacts', newContacts);
     setShowModal(false);
   };
 
