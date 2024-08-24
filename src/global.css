@@ -59,6 +59,17 @@ input {
     border-radius: 4px;
 }
 
+input.invalid {
+    border: 2px solid #fffe03;
+}
+
+.input-control .error {
+    color: #fffe03;
+    font-size: 12px;
+    font-weight: bold;
+    height: 14px;
+}
+
 button {
     border: none;
     outline: none;

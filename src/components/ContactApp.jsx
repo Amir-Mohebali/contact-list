@@ -13,6 +13,7 @@ const ContactApp = () => {
         email, setEmail,
         phone, setPhone,
         searchUser, setSearchUser, 
+        nameError, phoneError, emailError,
         addContact, deleteContact,
         updateContact, handleEdit, 
     } = useContactList();
@@ -25,12 +26,15 @@ const ContactApp = () => {
                 <form onSubmit={addContact} className="add-form">
                   <div className="input-control">
                     <input type="text" id="Name_Input" value={name} onChange={(e)=> setName(e.target.value)} placeholder="Name" />
+                    <div className="error">{nameError}</div>
                   </div>
                   <div className="input-control">
                     <input type="text" id="Phone_Input" value={phone} onChange={(e)=> setPhone(e.target.value)} placeholder="Phone" />
+                    <div className="error">{phoneError}</div>
                   </div>
                   <div className="input-control">
                     <input type="text" id="Email_Input" value={email} onChange={(e)=> setEmail(e.target.value)} placeholder="Email" />
+                    <div className="error">{emailError}</div>
                   </div>                
                   <button type="submit" className="submit">Add</button>
                 </form>
