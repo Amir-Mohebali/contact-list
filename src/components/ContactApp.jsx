@@ -43,7 +43,7 @@ const ContactApp = () => {
                     placeholder="Search list..." 
                     className="search-box" 
                 />
-                <ContactList contacts={contacts} onDelete={deleteContact} onEdit={handleEdit}/>
+                <ContactList contacts={contacts} onDelete={deleteContact} onEdit={handleEdit} searchTerm={searchUser}/>
             </div>
             {showModal && <EditContact contact={editContact} onUpdate={updateContact} onClose={() => setShowModal(false)} />}
             <Toaster />

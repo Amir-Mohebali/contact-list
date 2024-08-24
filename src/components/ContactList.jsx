@@ -1,12 +1,13 @@
 import React from 'react';
 import { FaUserCircle, FaPhone, FaEnvelope, FaPen, FaTrash } from 'react-icons/fa'
 
-const ContactList = ({ contacts, onDelete, onEdit }) => {
+const ContactList = ({ contacts, onDelete, onEdit, searchTerm }) => {
   return (
     !contacts.length
     ?null
     :<div className="list">
         {contacts
+            .filter((contact)=> contact.name.includes(searchTerm))
             .map((contact) => (
                 <div className="item" key={contact.id}>
                     <div className="item-wrapper">
