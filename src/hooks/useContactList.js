@@ -5,6 +5,9 @@ import toast from 'react-hot-toast';
 export const useContactList = () => {
   const [contacts, setContacts] = useState([]);
 
+  const [editContact, setEditContact] = useState(null);
+  const [showModal, setShowModal] = useState(false);
+
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
@@ -37,8 +40,22 @@ export const useContactList = () => {
     setContacts(newContacts);
   };
 
+  const updateContact = (updatedContact) => {
+    const newContacts = contacts.map(contact => (contact.id === updatedContact.id ? updatedContact : contact));
+    setContacts(newContacts);
+    setShowModal(false);
+  };
+
+  const handleEdit = (contact) => {
+    setEditContact(contact);
+    setShowModal(true);
+  };
+
   return {
     contacts,
+    editContact,
+    showModal,
+    setShowModal,
     name,
     setName,
     email,
@@ -49,5 +66,7 @@ export const useContactList = () => {
     setSearchUser,
     addContact,
     deleteContact,
+    updateContact,
+    handleEdit,
   }
 }

@@ -1,17 +1,20 @@
 import { useState } from "react"
 import { useContactList } from "../hooks/useContactList"
 import ContactList from "./ContactList";
+import EditContact from "./EditContact";
 import { Toaster } from 'react-hot-toast';
 
 import form_bg from '../assets/images/form-bg.jpg'
 
 const ContactApp = () => {
-    const { contacts,
+    const { contacts, editContact,
+        showModal, setShowModal,
         name, setName,
         email, setEmail,
         phone, setPhone,
         searchUser, setSearchUser, 
         addContact, deleteContact,
+        updateContact, handleEdit, 
     } = useContactList();
 
     return (
@@ -40,8 +43,9 @@ const ContactApp = () => {
                     placeholder="Search list..." 
                     className="search-box" 
                 />
-                <ContactList contacts={contacts} onDelete={deleteContact}/>
+                <ContactList contacts={contacts} onDelete={deleteContact} onEdit={handleEdit}/>
             </div>
+            {showModal && <EditContact contact={editContact} onUpdate={updateContact} onClose={() => setShowModal(false)} />}
             <Toaster />
         </div>
     )

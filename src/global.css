@@ -66,18 +66,28 @@ button {
     cursor: pointer;
 }
 
-.submit {
-    /* display: block; */
+.submit, .cancel {
     font-size: 16px;
     width: 100%;
     padding: 12px 8px;
     color: #fff;
     border-radius: 4px;
+}
+
+.submit {
     background-color: #800f60;
+}
+
+.cancel {
+    background-color: #ee0000;
 }
 
 .submit:hover {
     background-color: #700d54;
+}
+
+.cancel:hover {
+    background-color: #d40000;
 }
 
 .main-container {
@@ -215,4 +225,22 @@ button {
 
 .modal-body {
     padding: 15px 20px;
+}
+
+.edit-form input {
+    border: 2px solid #dfdfdf;
+    padding: 8px;
+}
+
+.edit-form input:focus {
+    border: 2px solid #800f60;
+}
+
+.buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.buttons button {
+    flex: 1;
 }
