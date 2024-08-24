@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaUserCircle, FaPhone, FaEnvelope, FaPen, FaTrash } from 'react-icons/fa'
 
-const ContactList = ({ contacts }) => {
+const ContactList = ({ contacts, onDelete }) => {
   return (
     !contacts.length
     ?null
@@ -29,7 +29,7 @@ const ContactList = ({ contacts }) => {
                         <button>
                             <FaPen color='#fffe03'/>
                         </button>
-                        <button>
+                        <button onClick={() => onDelete(contact.id)}>
                             <FaTrash color='#fffe03'/>
                         </button>
                     </div>

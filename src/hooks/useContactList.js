@@ -32,6 +32,11 @@ export const useContactList = () => {
     }
   }
 
+  const deleteContact = (id) => {
+    const newContacts = contacts.filter(contact => contact.id !== id);
+    setContacts(newContacts);
+  };
+
   return {
     contacts,
     name,
@@ -43,5 +48,6 @@ export const useContactList = () => {
     searchUser,
     setSearchUser,
     addContact,
+    deleteContact,
   }
 }

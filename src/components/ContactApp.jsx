@@ -11,7 +11,7 @@ const ContactApp = () => {
         email, setEmail,
         phone, setPhone,
         searchUser, setSearchUser, 
-        addContact,
+        addContact, deleteContact,
     } = useContactList();
 
     return (
@@ -40,7 +40,7 @@ const ContactApp = () => {
                     placeholder="Search list..." 
                     className="search-box" 
                 />
-                <ContactList contacts={contacts}/>
+                <ContactList contacts={contacts} onDelete={deleteContact}/>
             </div>
             <Toaster />
         </div>
